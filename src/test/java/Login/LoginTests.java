@@ -35,29 +35,54 @@ public class LoginTests {
         driver.findElement(By.linkText("Ballerinas & Flats")).click();
         Thread.sleep(3000);
         //to search for an item
-        driver.findElement(By.xpath("(//input[@name='search'])[2]")).sendKeys("Shonex Women Butterfly Embellished Shiny Canvas Loafers - Blue");
+        driver.findElement(By.xpath("(//input[@name='search'])[2]")).sendKeys("Non Piercing Magnetic Pyramid Stud - Black");
         driver.findElement(By.xpath("(//button[@class='fdd83_39Iap'])[2]")).click();
         Thread.sleep(3000);
         //to click on the add to cart button
         driver.findElement(By.xpath("//div[@class='af885_1iPzH']//h3[1]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //to ad 4 pieces to the cart
         driver.findElement(By.xpath("(//button[@class='c4079_DW1vB'])[2]")).click();
-        //to buy the item
-        driver.findElement(By.xpath("(//button[text()='Buy Now'])[2]")).click();
-        //to increase the number of pieces
         driver.findElement(By.xpath("(//button[@class='c4079_DW1vB'])[2]")).click();
-        //to go to checkout
+        driver.findElement(By.xpath("(//button[@class='c4079_DW1vB'])[2]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to click on the buy button
+        driver.findElement(By.xpath("(//button[@class='_0a08a_3czMG _6d187_pzjfk'])[2]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to click on checkout button
         driver.findElement(By.xpath("(//a[@href='/checkout/complete-order'])[2]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //Select a delivery option
+        driver.findElement(By.xpath("(//a[@class='_0a08a_3czMG _7e22a_3zNWE'])[1]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to select an address
+        driver.findElement(By.xpath("(//button[@name='selectDeliveryAddress'])[1]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to choose an existing address
+        driver.findElement(By.linkText("Use this Address")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
-
+        //to select a payment method
+        driver.findElement(By.name("selectPaymentMethod")).click();
+        //to continue to payment
+        driver.findElement(By.name("placeOrder")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to select card option
+        driver.findElement(By.xpath("(//span[@class='payment-option-info'])[1]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //to switch to the iframe
+        driver.switchTo().frame("payment-option-name");
+        //to click the frame
+        driver.findElement(By.xpath("//span[text()='Card']']")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        
+        driver.findElement(By.id("card-number")).sendKeys("44242 4242 4242 4242 ");
+        driver.findElement(By.xpath("(//input[@class='date input_class'])[1]")).sendKeys(" 10/20");
+        driver.findElement(By.id("cvv")).sendKeys("419 ");
+        driver.findElement(By.xpath("(//button[@class='button'])[1]")).click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
-
-
-
-
-
 
     public static void main(String args[]) throws InterruptedException {
         LoginTests test = new LoginTests();
