@@ -21,8 +21,8 @@ public class LoginTests {
         System.out.println(driver.getTitle());
         //This line of code is logging in and entering user's details
         driver.findElement(By.linkText("Login / Signup")).click();
-        driver.findElement(By.id("username")).sendKeys("sulaimondamola96@gmail.com");
-        driver.findElement(By.id("password")).sendKeys("sherifat29");
+        driver.findElement(By.id("username")).sendKeys("xxxxx");
+        driver.findElement(By.id("password")).sendKeys("xxxxx");
         driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
         Actions actions = new Actions (driver);
         //this line of code is hovering on the element before selecting
