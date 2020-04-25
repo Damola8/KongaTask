@@ -67,15 +67,8 @@ public class LoginTests {
         //to continue to payment
         driver.findElement(By.name("placeOrder")).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //to select card option
-       // driver.findElement(By.xpath("(//span[@class='payment-option-info'])[1]")).click();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //to switch to the iframe
-
-
         driver.switchTo().frame("kpg-frame-component");
-        //to click the frame
-        //driver.findElement(By.xpath("//span[text()='Card']']")).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // to enter the card details
         driver.findElement(By.id("card-number")).sendKeys("44242 4242 4242 4242 ");
