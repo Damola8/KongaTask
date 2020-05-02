@@ -21,8 +21,8 @@ import java.util.concurrent.TimeUnit;
         System.out.println(driver.getTitle());
         //logging in and entering user's details
         driver.findElement(By.linkText("Login / Signup")).click();
-        driver.findElement(By.id("username")).sendKeys("");
-        driver.findElement(By.id("password")).sendKeys("");
+        driver.findElement(By.id("username")).sendKeys("xxx");
+        driver.findElement(By.id("password")).sendKeys("xxx");
         driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
         Actions actions = new Actions (driver);
 
